@@ -7,6 +7,6 @@ Cris Paulo Buensuceso
 5. Java Virtual Machine
 6. Runtime Environment
 7. FALSE
-8. 
+8. JAVA_HOME
 9. 
 10. 
