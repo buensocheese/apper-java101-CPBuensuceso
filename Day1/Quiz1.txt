@@ -13,3 +13,5 @@ Cris Paulo Buensuceso
 public static void main(String[] args) {
 	System.out.println("Paulo Buensuceso");
 }
+
+Bonus: colorblind yellow
