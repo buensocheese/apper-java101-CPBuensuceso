@@ -8,5 +8,8 @@ Cris Paulo Buensuceso
 6. Runtime Environment
 7. FALSE
 8. JAVA_HOME
-9. 
-10. 
+9-10. 
+
+public static void main(String[] args) {
+	System.out.println("Paulo Buensuceso");
+}
