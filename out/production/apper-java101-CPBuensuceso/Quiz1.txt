@@ -1,0 +1,17 @@
+Cris Paulo Buensuceso
+
+1. Java Development Kit
+2. Programming Language
+3. Runtime Environment
+4. Standard Library
+5. Java Virtual Machine
+6. Runtime Environment
+7. FALSE
+8. JAVA_HOME
+9-10. 
+
+public static void main(String[] args) {
+	System.out.println("Paulo Buensuceso");
+}
+
+Bonus: colorblind yellow

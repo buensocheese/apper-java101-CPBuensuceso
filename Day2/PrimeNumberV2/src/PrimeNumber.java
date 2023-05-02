@@ -11,10 +11,10 @@ class PrimeNumber {
             boolean isValidInput = false;
 
             while (!isValidInput) {
-                System.out.print("Enter an integer between 1 and 1,000,000 to test: ");
+                System.out.print("Enter an integer between 1 and 10,000,000 to test: ");
                 try {
                     number = Integer.parseInt(scanner.nextLine());
-                    if (number >= 1 && number <= 1000000) {
+                    if (number >= 1 && number <= 10000000) {
                         isValidInput = true;
                     } else {
                         System.out.println("Error: Input out of range.");
