@@ -45,8 +45,8 @@ public class LoadTransferApp {
                 System.exit(0);
                 break;
             default:
-                clearConsole();
                 System.out.println("Invalid option! Please choose a valid option.");
+                clearConsole();
                 showMainMenu();
                 break;
         }
@@ -54,10 +54,22 @@ public class LoadTransferApp {
 
     // Clear Console
     private static void clearConsole() {
-        // Clear console output (works on most systems)
+        // Clear console output
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
+
+    // Clear Console with Delay
+    private static void clearConsoleDelay() {
+        try {
+            Thread.sleep(1000); // Add a 1-second delay
+            System.out.print("\033[H\033[2J"); // Clear console output (works on most systems)
+            System.out.flush();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     // Case 1: View Balance
     private static void viewLoadBalances() {
@@ -91,6 +103,7 @@ public class LoadTransferApp {
         // Error Check
         if (username.isBlank()) {
             System.out.println("Error: Username cannot be blank!");
+            clearConsoleDelay();
             registerNewAccount();
             return;
         }
@@ -98,6 +111,7 @@ public class LoadTransferApp {
         for (User user : users.values()) {
             if (user.getUsername().equalsIgnoreCase(username)) {
                 System.out.println("Error: Username already exists!");
+                clearConsoleDelay();
                 registerNewAccount();
                 return;
             }
@@ -111,12 +125,14 @@ public class LoadTransferApp {
         // Error Check
         if (!phoneNumber.matches("^09\\d{9}$")) {
             System.out.println("Error: Invalid phone number format! It should start with '09' and have 11 digits.");
+            clearConsoleDelay();
             registerNewAccount();
             return;
         }
 
         if (users.containsKey(phoneNumber)) {
             System.out.println("Error: Phone number is already registered!");
+            clearConsoleDelay();
             registerNewAccount();
             return;
         }
@@ -147,6 +163,7 @@ public class LoadTransferApp {
         // Error Check: Phone Number
         if (!users.containsKey(senderPhoneNumber)) {
             System.out.println("Error: Sender's phone number is not registered!");
+            clearConsoleDelay();
             transferLoadBalance();
             return;
         }
@@ -158,12 +175,14 @@ public class LoadTransferApp {
         // Error Check: Phone Number
         if (!users.containsKey(recipientPhoneNumber)) {
             System.out.println("Error: Recipient's phone number is not registered!");
+            clearConsoleDelay();
             transferLoadBalance();
             return;
         }
 
         if (senderPhoneNumber.equals(recipientPhoneNumber)) {
             System.out.println("Error: Sender and recipient phone numbers cannot be the same!");
+            clearConsoleDelay();
             transferLoadBalance();
             return;
         }
@@ -176,6 +195,7 @@ public class LoadTransferApp {
         // Error Check: Insufficient Balance
         if (amount > sender.getLoadBalance()) {
             System.out.println("Error: Insufficient load balance for the transfer!");
+            clearConsoleDelay();
             transferLoadBalance();
             return;
         }
